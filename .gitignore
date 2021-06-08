@@ -5,3 +5,5 @@ env*
 
 # Serverless directories
 .serverless
+
+.package.json

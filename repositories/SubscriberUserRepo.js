@@ -23,7 +23,7 @@ module.exports = {
     async findAndCountAll( criteria = null, attributes = null, sort = null, groupBy = null, limit = 10, offset = 0, distinct = true, include = null, raw = null ){
         let response = {
             errors: null,
-            data: null
+            data: {}
         };
 
         try{
@@ -38,8 +38,8 @@ module.exports = {
                 include: include,
                 raw: raw
             });
+            records.totalpages = (records.count) ? Math.ceil(records.count / limit) : 0;
             response.data = records;
-            response.data.totalPages = (records.count) ? Math.ceil(records.count / limit) : 0;
         } catch(message) {
             console.log(`SubscriberUsmessageepo.findAndCountAll() >>> ${message.name} : ${message.message}`);
             response.errors = [{ message: 'Database Processing Failed' }];
