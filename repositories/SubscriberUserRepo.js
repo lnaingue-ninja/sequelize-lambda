@@ -13,7 +13,7 @@ module.exports = {
             });
             response.data = record;
         } catch (message) {
-            console.log(`SubscriberUsmessageepo.findOne() >>> ${message.name} : ${message.message}`);
+            console.log(`SubscriberUserRepo.findOne() >>> ${message.name} : ${message.message}`);
             response.errors = [{ message: 'Database Processing Failed' }];
         }
 
@@ -27,7 +27,7 @@ module.exports = {
         };
 
         try{
-            const records = await SubscriberUser.findAndCountAll({
+            const record = await SubscriberUser.findAndCountAll({
                 attributes: attributes,
                 where: criteria,
                 order: sort,
@@ -38,10 +38,15 @@ module.exports = {
                 include: include,
                 raw: raw
             });
-            records.totalpages = (records.count) ? Math.ceil(records.count / limit) : 0;
-            response.data = records;
+            const pages = (record.count) ? Math.ceil(record.count / limit) : 0;
+            response.data = {
+                count: record.count,
+                pages: pages,
+                rows: record.rows
+            };
+
         } catch(message) {
-            console.log(`SubscriberUsmessageepo.findAndCountAll() >>> ${message.name} : ${message.message}`);
+            console.log(`SubscriberUserRepo.findAndCountAll() >>> ${message.name} : ${message.message}`);
             response.errors = [{ message: 'Database Processing Failed' }];
         }
         return response;

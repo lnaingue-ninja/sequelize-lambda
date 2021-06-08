@@ -14,7 +14,7 @@ functions:
     handler: handler.getOne
     events:
       - http:
-          path: subscriber/{id}
+          path: subscriber/{mysph_hash}
           method: get
           cors: true
   getAll:

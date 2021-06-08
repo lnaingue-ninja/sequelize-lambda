@@ -32,23 +32,18 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATEONLY
         },
         subscription_sttdte: {
-           
             type: DataTypes.DATEONLY
         },
         subscription_enddte: {
-           
             type: DataTypes.DATEONLY
         },
         subscription_cttaccptdte: {
-           
             type: DataTypes.DATEONLY
         },
         subscription_cttenddte: {
-           
             type: DataTypes.DATEONLY
         },
         is_fullpayment: {
-           
             type: DataTypes.BOOLEAN
         },
         service_flag_code: {
