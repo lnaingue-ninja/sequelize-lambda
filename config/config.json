@@ -1,0 +1,38 @@
+{
+  "dev": {
+    "use_env_variable": "SUBSCRIBERS_DB_URI",
+    "dialect": "mysql",
+    "define": {
+        "undescored": true,
+        "undescoredAll": true,
+        "omitNull": true
+    }
+  },
+ "test": {
+    "use_env_variable": "SUBSCRIBERS_DB_URI",
+    "dialect": "mysql",
+    "define": {
+        "undescored": true,
+        "undescoredAll": true,
+        "omitNull": true
+    }
+  },
+  "local": {
+    "use_env_variable": "SUBSCRIBERS_DB_URI",
+    "dialect": "mysql",
+    "define": {
+        "undescored": true,
+        "undescoredAll": true,
+        "omitNull": true
+    }
+  },
+  "prod": {
+    "use_env_variable": "SUBSCRIBERS_DB_URI",
+    "dialect": "mysql",
+    "define": {
+        "undescored": true,
+        "undescoredAll": true,
+        "omitNull": true
+    }
+  }
+}

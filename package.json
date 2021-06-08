@@ -1,0 +1,25 @@
+{
+  "name": "web-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sequelize-local": "source env/.env.local && npx sequelize-cli  $* --env local",
+    "sequelize-dev": "source env/.env.dev && npx sequelize-cli  $* --env dev",
+    "sequelize-prod": "source env/.env.prod && npx sequelize-cli  $* --env prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-offline": "^7.0.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.923.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2",
+    "sequelize-migrate": "^1.2.2",
+    "serverless": "^2.44.0"
+  }
+}

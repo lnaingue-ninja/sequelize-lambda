@@ -1,0 +1,28 @@
+service: web-api
+
+#custom:
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  timeout: 30
+
+functions:
+  getOne:
+    handler: handler.getOne
+    events:
+      - http:
+          path: subscriber/{id}
+          method: get
+          cors: true
+  getAll:
+    handler: handler.getAll
+    events:
+     - http:
+         path: subscriber/list
+         method: get
+         cors: true
+ 
+
+plugins:
+  - serverless-offline
