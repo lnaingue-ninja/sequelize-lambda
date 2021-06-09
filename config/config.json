@@ -1,6 +1,10 @@
 {
   "dev": {
-    "use_env_variable": "SUBSCRIBERS_DB_URI",
+    "host"     : "RDS_HOSTNAME",
+    "username" : "RDS_USERNAME",
+    "password" : "RDS_PASSWORD",
+    "port"     : "RDS_PORT",
+    "database" : "RDS_DB_NAME",
     "dialect": "mysql",
     "define": {
         "undescored": true,
@@ -9,7 +13,11 @@
     }
   },
  "test": {
-    "use_env_variable": "SUBSCRIBERS_DB_URI",
+    "host"     : "RDS_HOSTNAME",
+    "username" : "RDS_USERNAME",
+    "password" : "RDS_PASSWORD",
+    "port"     : "RDS_PORT",
+    "database" : "RDS_DB_NAME",
     "dialect": "mysql",
     "define": {
         "undescored": true,
@@ -18,7 +26,12 @@
     }
   },
   "local": {
-    "use_env_variable": "SUBSCRIBERS_DB_URI",
+    "use_env_variable" : true,
+    "host"     : "RDS_HOSTNAME",
+    "username" : "RDS_USERNAME",
+    "password" : "RDS_PASSWORD",
+    "port"     : "RDS_PORT",
+    "database" : "RDS_DB_NAME",
     "dialect": "mysql",
     "define": {
         "undescored": true,
@@ -27,7 +40,11 @@
     }
   },
   "prod": {
-    "use_env_variable": "SUBSCRIBERS_DB_URI",
+    "host"     : "RDS_HOSTNAME",
+    "username" : "RDS_USERNAME",
+    "password" : "RDS_PASSWORD",
+    "port"     : "RDS_PORT",
+    "database" : "RDS_DB_NAME",
     "dialect": "mysql",
     "define": {
         "undescored": true,

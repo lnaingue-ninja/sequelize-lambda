@@ -7,14 +7,12 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'dev';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
-
-let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
-
+const sequelize = new Sequelize(process.env[config.database], process.env[config.username], process.env[config.password], {
+  host: process.env[config.RDS_HOSTNAME],
+  port: process.env[config.RDS_PORT],
+  dialect: config.dialect,
+  define: config.define
+});
 fs
   .readdirSync(__dirname)
   .filter(file => {
