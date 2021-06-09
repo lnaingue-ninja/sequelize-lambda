@@ -3,12 +3,12 @@
 1. Check out from github to your local directory
 2. Run npm install, to install all dependencies
 3. Create env folder in the root directory and create .env.${stage} file (dev,local,prod).
-        ##key-value pair
-        ###### export RDS_HOSTNAME=localhost
-        ###### export RDS_USERNAME=user
-        ###### export RDS_PASSWORD=pw
-        ###### export RDS_PORT=3306
-        ###### export RDS_DB_NAME=dbname
+     #### Environment Variable: key-value pair
+     ###### export RDS_HOSTNAME=localhost
+     ###### export RDS_USERNAME=user
+     ###### export RDS_PASSWORD=pw
+     ###### export RDS_PORT=3306
+     ###### export RDS_DB_NAME=dbname
 4. To run locally, execute this command
     - Source env file
         - MAC Command: source env/.env.local
