@@ -1,5 +1,7 @@
 'use strict';
 const SubscriberUserService = require('./services/SubscriberUserService');
+const SubscriberRawQuery = require('./services/SubscriberRawQuery');
+
 const STATUS_CODE_OK = 200;
 const STATUS_CODE_UNPROCESSABLE = 422;
 
@@ -37,4 +39,26 @@ module.exports.getAll = async (event) => {
 		response.body = JSON.stringify(data);
 	}
 	return response;
+}
+
+//Sample Using Raw Queries
+module.exports.users = async (event) => {
+	const response = await SubscriberRawQuery.fetchUsers(event);
+	response.statusCode = STATUS_CODE_OK;
+	response.body = JSON.stringify(response);
+	return response;
+	// const response = {
+	// 	statusCode: null,
+	// 	headers: null,
+	// 	body: {}
+	// }
+	// if (errors) {
+	// 	response.statusCode = STATUS_CODE_UNPROCESSABLE;
+	// 	response.headers = { 'Content-Type': 'text/plain' };
+	// 	response.body = JSON.stringify(errors);
+	// } else {
+	// 	response.statusCode = STATUS_CODE_OK;
+	// 	response.body = JSON.stringify(data);
+	// }
+	// return response;
 }
